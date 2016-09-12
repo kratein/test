@@ -1,0 +1,11 @@
+<h1>Liste des livres</h1>
+<%= paginate @books %>
+<% @books.each do |book| %>
+  <p>
+    <%= book_link book %>
+    <% if book.category %>
+      (<%= book.category.title %>)
+    <% end %>
+  </p>
+<% end %>
+<%=render "books/form" %>
